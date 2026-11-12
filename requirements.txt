@@ -1,0 +1,11 @@
+# 已在 A:\MiniConda\envs\yolo（Python 3.10.22）验证
+torch>=2.0
+torchvision>=0.15
+ultralytics>=8.3
+opencv-python>=4.8
+numpy>=1.24
+matplotlib>=3.7
+
+# 可选：第 6 章端侧导出（当前工程未实现导出脚本）
+# onnx>=1.15
+# onnxruntime>=1.17

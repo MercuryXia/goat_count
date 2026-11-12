@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+data/
+
+runs/
+out/
+
+*.log
+*.tmp
+.DS_Store

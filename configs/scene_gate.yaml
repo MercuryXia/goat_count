@@ -1,0 +1,40 @@
+fps: 25
+# 单应标定：图像 4 点必须与 BEV 4 点一一对应（顺序一致，顺时针或逆时针都行）
+# 下面是 demo 合成场景的标定值；上真机时换成自己量取的 4 个地面点。
+homography:
+  image_points: [[70, 505], [890, 505], [700, 130], [260, 130]]
+  bev_points: [[-4.8, -2.7], [4.8, -2.7], [4.8, 2.7], [-4.8, 2.7]]
+
+counting:
+  # 计数线两端点（BEV，米）；方向 p1->p2 的左侧为正
+  line: [[0.0, -2.7], [0.0, 2.7]]
+  in_side: positive        # 正侧算"栏内"
+  hysteresis_m: 0.30       # 迟滞带半宽
+  body_length_m: 0.70      # 石山羊体长先验（用于把像素位移换成体长倍数）
+  margin_body: 0.5         # 过线后至少走 0.5 个体长才认
+  confirm_frames:
+    day: 5
+    night: 8
+  reentry_window_s: 6.0
+  # 合并只用于"同一只羊被拆成两条轨迹"的情形，窗口别开太大，
+  # 否则前后脚过线的两只羊会被并成一次
+  merge_window_s: 0.8
+  merge_radius_m: 0.8
+  min_box_h_px: 12
+
+tracking:
+  gate_m: 1.6
+  max_age_s: 2.5
+  n_init: 3
+  high_conf: 0.5
+  low_conf: 0.10
+
+filter:
+  classes: [goat, dog, person]
+  goat_class: 0
+  vote_window: 15
+  goat_vote: 0.70
+  gait:
+    enabled: true
+    dog_freq_hz: 2.6
+    goat_freq_hz: 1.6
