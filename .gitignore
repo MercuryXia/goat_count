@@ -1,13 +1,27 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*.egg-info/
+.pytest_cache/
 
-data/
+# 数据：只留说明，数据本体不入库
+data/*
+!data/README.md
 
+# 训练与推理产物
 runs/
 out/
+*.pt
+*.onnx
+*.engine
 
+# 日志与临时文件
 *.log
 *.tmp
+
+# 编辑器与系统
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db
+desktop.ini
