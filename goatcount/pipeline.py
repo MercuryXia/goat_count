@@ -14,7 +14,7 @@ from typing import Dict, Iterable, Iterator, List, Optional, Sequence, Tuple
 import numpy as np
 
 from .config import SceneConfig
-from .counting import ConservationLedger, CrossingEvent, GateCounter, save_events
+from .counting import CrossingEvent, GateCounter, save_events
 from .geometry import apply_homography, contact_point, obb_from_xywhr
 from .tracking import LiteTracker, Observation, Track, TrackFilter
 

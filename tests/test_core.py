@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import math
 import os
-import tempfile
 import unittest
 
 import numpy as np
@@ -19,7 +18,6 @@ from goatcount.demo import BEV_QUAD, IMAGE_QUAD
 from goatcount.geometry import (
     apply_homography,
     contact_point,
-    homography_from_points,
     line_signed_distance,
     obb_from_xywhr,
 )

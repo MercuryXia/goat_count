@@ -11,7 +11,7 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 import numpy as np
 
 from .counting import CrossingEvent
-from .geometry import apply_homography, obb_from_xywhr
+from .geometry import apply_homography
 from .tracking import Track
 
 try:  # cv2 在 yolo 环境里有；缺失时 draw_* 抛清晰错误
